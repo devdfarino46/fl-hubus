@@ -1,0 +1,115 @@
+.youllget {
+}
+
+.youllget__container {
+    display: flex;
+    position: relative;
+}
+
+.youllget__list {
+    margin-left: 133px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    z-index: 2;
+}
+
+.youllget__item {
+    display: flex;
+    gap: 20px 40px;
+    padding: 6px 0;
+    align-items: center;
+}
+
+.youllget__item-num {
+    font-family: Montserrat;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150.5%; /* 150.5px */
+
+    color: white;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.youllget__item:nth-of-type(2) > .youllget__item-num {
+    -webkit-text-stroke: unset;
+    color: white;
+}
+
+.youllget__item:nth-of-type(4) > .youllget__item-num {
+    -webkit-text-stroke-width: 3px;
+}
+
+.youllget__item:nth-of-type(6) > .youllget__item-num {
+    -webkit-text-stroke-width: 10px;
+}
+
+.youllget__item-text {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 152.5%; /* 45.75px */
+    max-width: 674px;
+}
+
+.youllget__img-wrapper {
+    position: relative;
+    margin-left: -67.6px;
+    margin-top: 563.21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    z-index: 1;
+    
+
+    &::before {
+        content: url('../img/youllget-gradient.svg');
+        position: absolute;
+        top: -232px;
+        right: -194px;
+        z-index: -1;
+    }
+}
+
+.youllget__img {
+    transform: rotate(-9.748deg);
+    transform-origin: center;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.youllget__img-play-btn {
+    position: absolute;
+    fill: #D9D9D9;
+
+    .svg-icon {
+        width: 84px;
+        height: 84px;
+    }
+}
+
+@media screen and (max-width: 1535px) {
+    .youllget__img-wrapper {
+        display: none;
+    }
+
+    .youllget__list {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    
+
+    .youllget__item {
+        flex-direction: column;
+    }
+}

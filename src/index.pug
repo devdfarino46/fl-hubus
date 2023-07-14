@@ -1,0 +1,91 @@
+include _mixins.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="assets/css/fontfacerules.css")
+        link(rel="stylesheet", href="assets/css/main.min.css")
+        script(src="libs/js/jquery-3.7.0.min.js") 
+        script(src="libs/js/jquery.lettering.js")
+        title Document
+    body 
+        header.header
+            .header__container.container
+                .header__main-wrapper
+                    h1.header__title 
+                       | Инновационные #[br]
+                       | бизнес-инструменты #[br]
+                       | для увеличения продажи
+
+                    p.header__descr 
+                        | Создано профессиональным 
+                        span.header__descr-regular психологом 
+                        | и 
+                        span.header__descr-regular основателем 
+                        | Hubus & Co.
+
+                    .header__installs-btns-wrapper
+                        a.btn-install(href="#") 
+                            img.btn-install__icon(src="assets/img/icons/app-store.webp", alt="", width="25", height="25")
+                            p.btn-install__label
+                                span.btn-install__label-install Установить #[br]
+                                span.btn-install__label-install_with Apple Store
+                        a.btn-install(href="#") 
+                            img.btn-install__icon(src="assets/img/icons/google-play.svg", alt="", width="19.75", height="22")
+                            p.btn-install__label
+                                span.btn-install__label-install Установить #[br]
+                                span.btn-install__label-install_with Google Play
+
+            .header__main-btn-wrapper
+                a.header__main-btn(href="#") 
+                    +svgIcon('circled-text', 'header__main-btn-text-border')
+                    span.header__main-btn-label Запуск 
+                        span Бесплатно!
+
+            .header__images-wrapper
+                img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
+                img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
+
+        main.page
+            section.page__youllget.youllget
+                .youllget__container.container
+                    ul.youllget__list
+                        li.youllget__item
+                            p.youllget__item-num 01/
+                            p.youllget__item-text
+                                | Увеличить свои продажи в несколько раз и стать 
+                                | настоящим гуру с прибылью от 150 000 ₽ в месяц.
+                        li.youllget__item
+                            p.youllget__item-num 02/
+                            p.youllget__item-text
+                                | Привлечь новых клиентов и создать 
+                                | базу лояльных покупателей.
+                        li.youllget__item
+                            p.youllget__item-num 03/
+                            p.youllget__item-text
+                                | Овладеть мощными техниками переговоров 
+                                | и заключения сделок.
+                        li.youllget__item
+                            p.youllget__item-num 04/
+                            p.youllget__item-text
+                                | Создать неотразимые предложения, 
+                                | которые невозможно отклонить.
+                        li.youllget__item
+                            p.youllget__item-num 05/
+                            p.youllget__item-text
+                                | Повысить конверсию и доходность 
+                                | каждой сделки.
+                        li.youllget__item
+                            p.youllget__item-num 06/
+                            p.youllget__item-text
+                                | Максимизировать эффективность 
+                                | работы и сэкономить время.
+                    .youllget__img-wrapper
+                        img.youllget__img(src="assets/img/youllget@517px.webp", alt="", width="516", height="344")
+                        a.youllget__img-play-btn(href="#") 
+                            +svgIcon('play')
+
+
+        script(src="assets/js/main.min.js") 

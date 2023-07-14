@@ -1,0 +1,25 @@
+@import 'base/reset';
+@import 'base/vars';
+
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: 'Montserrat';
+	font-weight: 500;
+}
+
+.container {
+    max-width: $containerWidth;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
+
+@import 'components/btn-install';
+@import 'components/header';
+@import 'components/youllget-section';
