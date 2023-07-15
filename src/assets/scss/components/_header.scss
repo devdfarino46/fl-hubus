@@ -231,3 +231,18 @@
         width: 208px;
     }
 }
+
+@media screen and (max-width: 475px) {
+    .header {
+        margin-bottom: 400px;
+    }
+    .header__image-left {
+        margin-top: 80px;
+        width: 130px;
+    }
+
+    .header__image-right {
+        margin-top: 27px;
+        width: 138px;
+    }
+}

@@ -1,0 +1,83 @@
+.priceapp {
+    margin-bottom: 150px;
+}
+
+.priceapp__container {
+    padding-left: ($containerPadding+16);
+}
+
+.priceapp__wrapper {
+    padding: 64px 89px 89px;
+    border-radius: 100ch;
+    border: 5px solid #FFF;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(32, 32, 32, 0.00) 100%);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.priceapp__title {
+    background: linear-gradient(90deg, #9AB4F8 0%, #1915FF 83.65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 1076px;
+
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.priceapp__descr {
+    max-width: 997px;
+}
+
+.priceapp__descr-link {
+    background: linear-gradient(90deg, #C6A5D4 0%, #AC3CDC 83.65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1100px ) {
+    .priceapp__title {
+        font-size: 40px;
+    }
+
+    .priceapp__descr {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 825px ) {
+    .priceapp__wrapper {
+        border-radius: 60px;
+    }
+
+    .priceapp__title {
+        font-size: 35px;
+    }
+
+    .priceapp__descr {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .priceapp__title {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px ) {
+    .priceapp__wrapper {
+        padding: 64px 64px 89px;
+    }
+}
+
+@media screen and (max-width: 505px ) {
+    .priceapp__wrapper {
+        padding: 62px 32px 89px;
+    }
+}

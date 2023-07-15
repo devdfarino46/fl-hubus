@@ -4,7 +4,6 @@
 html,
 body {
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 body {
@@ -15,11 +14,54 @@ body {
 }
 
 .container {
+    box-sizing: border-box;
     max-width: $containerWidth;
     padding: 0 $containerPadding;
     margin: 0 auto;
 }
 
+.page__subtitle {
+    color: #FFF;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 150%; /* 90px */
+    text-transform: uppercase;
+}
+
+.page__subdescr {
+    color: #FFF;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 150%; /* 37.5px */
+}
+
+@media screen and (max-width: 625px) {
+    .page__subtitle {
+        font-size: 40px;
+    }
+
+    .page__subdescr {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .page__subtitle {
+        font-size: 30px;
+    }
+
+    .page__subdescr {
+        font-size: 15px;
+    }
+}
+
 @import 'components/btn-install';
 @import 'components/header';
 @import 'components/youllget-section';
+@import 'components/results-section';
+@import 'components/priceapp-section';
+@import 'components/products-section';
+@import 'components/program-section';
+@import 'components/bigtitle-section';
+@import 'components/records-section';
+@import 'components/trening-section';
