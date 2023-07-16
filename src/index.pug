@@ -8,23 +8,29 @@ html(lang="en")
         link(rel="stylesheet", href="assets/css/fontfacerules.css")
         link(rel="stylesheet", href="assets/css/main.min.css")
         script(src="libs/js/jquery-3.7.0.min.js") 
-        script(src="libs/js/jquery.lettering.js")
         title Document
     body 
         header.header
             .header__container.container
                 .header__main-wrapper
-                    h1.header__title 
-                       | Инновационные #[br]
-                       | бизнес-инструменты #[br]
-                       | для увеличения продажи
+                    h1.header__title-wrapper
+                        p.header__title
+                            span
+                               | Инновационные #[br]
+                               | бизнес-инструменты #[br]
+                               | для увеличения продажи
 
-                    p.header__descr 
-                        | Создано профессиональным 
-                        span.header__descr-regular психологом 
-                        | и 
-                        span.header__descr-regular основателем 
-                        | Hubus & Co.
+                    .header__descr
+                        p.header__descr-item
+                            span
+                                | Создано профессиональным 
+                                span.header__descr-regular психологом 
+                                | и 
+                                span.header__descr-regular основателем 
+                            | Hubus & Co.
+                        p.header__descr-item
+                            span
+                                | Создано совместно с командой психологов #1
 
                     .header__installs-btns-wrapper
                         a.btn-install(href="#") 
@@ -39,9 +45,8 @@ html(lang="en")
                                 span.btn-install__label-install_with Google Play
 
             .header__main-btn-wrapper
-                a.header__main-btn(href="#") 
-                    +svgIcon('circled-text', 'header__main-btn-text-border')
-                    span.header__main-btn-label Запуск 
+                a.header__main-btn.btn-ticket(href="#")
+                    span.header__main-btn-label.btn-ticket__label Запуск 
                         span Бесплатно!
 
             .header__images-wrapper
@@ -101,36 +106,42 @@ html(lang="en")
                             | шанс обрести доминирование в мире продаж! 
 
                     ul.results__list
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result4.svg", alt="")
-                            p.results__item-label
-                                | Разработать стратегии продаж, которые гарантированно 
-                                | увеличат вашу прибыль.
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result1.svg", alt="")
-                            p.results__item-label
-                                | Стать экспертом в убеждении и влиянии на ваших 
-                                | клиентов, создавая непреодолимые предложения. 
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result5.svg", alt="")
-                            p.results__item-label
-                                | Повысить конверсию продаж и эффективность 
-                                | работы вашей команды. 
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result6.svg", alt="")
-                            p.results__item-label
-                                | Оптимизировать ваши продажи через автоматизацию 
-                                | и персонализацию, сэкономив время и ресурсы. 
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result3.svg", alt="")
-                            p.results__item-label
-                                | Захватить рынок и обойти конкурентов, став 
-                                | востребованным лидером в вашей отрасли.
-                        li.results__item
-                            img.results__item-icon(src="assets/img/icons/results/result2.svg", alt="")
-                            p.results__item-label
-                                | Получить непреодолимую уверенность и 
-                                | умение достигать поставленных целей.
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result4.svg", alt="")
+                                p.results__item-label
+                                    | Разработать стратегии продаж, которые гарантированно 
+                                    | увеличат вашу прибыль.
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result1.svg", alt="")
+                                p.results__item-label
+                                    | Стать экспертом в убеждении и влиянии на ваших 
+                                    | клиентов, создавая непреодолимые предложения. 
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result5.svg", alt="")
+                                p.results__item-label
+                                    | Повысить конверсию продаж и эффективность 
+                                    | работы вашей команды. 
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result6.svg", alt="")
+                                p.results__item-label
+                                    | Оптимизировать ваши продажи через автоматизацию 
+                                    | и персонализацию, сэкономив время и ресурсы. 
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result3.svg", alt="")
+                                p.results__item-label
+                                    | Захватить рынок и обойти конкурентов, став 
+                                    | востребованным лидером в вашей отрасли.
+                        .results__item-wrapper 
+                            li.results__item
+                                img.results__item-icon(src="assets/img/icons/results/result2.svg", alt="")
+                                p.results__item-label
+                                    | Получить непреодолимую уверенность и 
+                                    | умение достигать поставленных целей.
 
             section.page__priceapp.priceapp
                 .priceapp__container.container
@@ -228,5 +239,30 @@ html(lang="en")
                                 span
                                     | Независимо от того, какой продукт или услугу вы предлагаете, наша программа 
                                     | тренинга и инновационное решение станут вашим секретным оружием в мире продаж.
+
+        footer.footer
+            .footer__container.container
+                h2.footer__title.page__subtitle
+                    | Оставляй заявку и приходи бесплатно
+                .footer__main-wrapper
+                    .footer__form-wrapper
+                        p.footer__descr.page__subdescr
+                            | Если что-то хотите уточнить, звоните прямо сейчас 
+                            | и станьте королем продаж завтра! 
+
+                        ul.footer__form-list
+                            li.footer__form-item
+                                p.footer__form-descr
+                                    | Напиши нам “Я в деле”
+                                    | И мы поможем стать номер 1  
+
+                    //- form.footer__form(action="#") 
+                        input.footer__forn-input(type="text", placeholder="Ваше имя")
+                        input.footer__forn-input(type="phone", placeholder="Телефон")
+                    .footer__btn-ticket-wrapper
+                        a.footer__btn-ticket.btn-ticket(href="#") 
+                            span.btn-ticket__label Запуск 
+                                span Бесплатно!
+                        +svgIcon('arrow', 'footer__btn-ticket-arrow')
 
         script(src="assets/js/main.min.js") 

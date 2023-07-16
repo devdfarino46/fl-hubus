@@ -13,15 +13,23 @@
 }
 
 .trening__images-wrapper {
+    position: relative;
     display: flex;
     gap: 372px;
     justify-content: center;
-    align-items: center;
     margin-left: -20px;
-    position: relative;
+
+    &::before {
+        content: url('../img/trening/bg-gradient.svg');
+        position: absolute;
+        z-index: -3;
+        top: -59px;
+        right: -296px;
+    }
 }
 
 .trening__image {
+    position: relative;
     box-sizing: border-box;
     background: url('../img/trening/phone.webp');
     background-size: 100% 100%;
@@ -38,21 +46,41 @@
     }
 }
 
+.trening__image-left {
+
+    &::before {
+        content: url('../img/trening/phone1-bg-gradient.svg');
+        position: absolute;
+        z-index: -2;
+        bottom: -255px;
+        right: -425.75px;
+    }
+}
+
 .trening__image-right {
-    margin-top: 153px;
+    margin-top: calc(154px / 1022px * 100%);
+
+    &::before {
+        content: url('../img/trening/phone2-bg-gradient.svg');
+        position: absolute;
+        z-index: -1;
+        bottom: -223.66px;
+        left: -455px;
+    }
 }
 
 .trening__descr-wrapper {
     position: absolute;
     background: #202020;
+    top: calc(594px / 1178px * 100%);
     width: 150vw;
     transform: rotate(15.967deg);
-    margin-top: 239px;
     display: flex;
     justify-content: center;
 }
 
 .trening__descr {
+    box-sizing: border-box;
     max-width: 100vw;
     text-align: center;
     color: #FFF;
@@ -60,7 +88,9 @@
     font-weight: 500;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100vw;
 
     span {
         max-width: 1423px;
@@ -75,7 +105,7 @@
 
 @media screen and (max-width: 1165px) {
     .trening__images-wrapper {
-        gap: 25px 52px;
+        gap: 52px;
     }
 }
 
@@ -87,8 +117,8 @@
 }
 
 @media screen and (max-width: 815px) {
-    .trening__descr-wrapper {
-        margin-top: 350px;
+    .trening__descr {
+        font-size: 25px;
     }
 }
 
@@ -99,7 +129,7 @@
     }
 
     .trening__descr {
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
@@ -118,6 +148,6 @@
     }
 
     .trening__descr {
-        font-size: 18px;
+        font-size: 15px;
     }
 }
