@@ -14,44 +14,46 @@ html(lang="en")
             .header__container.container
                 .header__main-wrapper
                     h1.header__title-wrapper
-                        p.header__title
+                        p.header__title.header__text-anim
                             span
                                | Инновационные #[br]
                                | бизнес-инструменты #[br]
                                | для увеличения продажи
 
-                    .header__descr
-                        p.header__descr-item
-                            span
+                    .header__descr-wrapper
+                        .header__descr-item
+                            p.header__text-anim.header__descr
                                 | Создано профессиональным 
                                 span.header__descr-regular психологом 
                                 | и 
                                 span.header__descr-regular основателем 
-                            | Hubus & Co.
-                        p.header__descr-item
-                            span
-                                | Создано совместно с командой психологов #1
+                                | Hubus & Co.
 
-                    .header__installs-btns-wrapper
-                        a.btn-install(href="#") 
-                            img.btn-install__icon(src="assets/img/icons/app-store.webp", alt="", width="25", height="25")
-                            p.btn-install__label
-                                span.btn-install__label-install Установить #[br]
-                                span.btn-install__label-install_with Apple Store
-                        a.btn-install(href="#") 
-                            img.btn-install__icon(src="assets/img/icons/google-play.svg", alt="", width="19.75", height="22")
-                            p.btn-install__label
-                                span.btn-install__label-install Установить #[br]
-                                span.btn-install__label-install_with Google Play
+                            .header__installs-btns-wrapper
+                                a.btn-install(href="#") 
+                                    img.btn-install__icon(src="assets/img/icons/app-store.webp", alt="", width="25", height="25")
+                                    p.btn-install__label
+                                        span.btn-install__label-install Установить #[br]
+                                        span.btn-install__label-install_with Apple Store
+                                a.btn-install(href="#") 
+                                    img.btn-install__icon(src="assets/img/icons/google-play.svg", alt="", width="19.75", height="22")
+                                    p.btn-install__label
+                                        span.btn-install__label-install Установить #[br]
+                                        span.btn-install__label-install_with Google Play
+                        .header__descr-item
+                            p.header__text-anim.header__descr
+                                | Создано совместно с командой психологов #1
 
             .header__main-btn-wrapper
                 a.header__main-btn.btn-ticket(href="#")
+                    +svgIcon('circled-text', 'btn-ticket__circled-text')
+                    .btn-ticket__bg
                     span.header__main-btn-label.btn-ticket__label Запуск 
                         span Бесплатно!
 
             .header__images-wrapper
-                img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
-                img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
+                    img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
+                    img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
 
         main.page
             section.page__youllget.youllget
@@ -59,32 +61,32 @@ html(lang="en")
                     ul.youllget__list
                         li.youllget__item
                             p.youllget__item-num 01/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Увеличить свои продажи в несколько раз и стать 
                                 | настоящим гуру с прибылью от 150 000 ₽ в месяц.
                         li.youllget__item
                             p.youllget__item-num 02/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Привлечь новых клиентов и создать 
                                 | базу лояльных покупателей.
                         li.youllget__item
                             p.youllget__item-num 03/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Овладеть мощными техниками переговоров 
                                 | и заключения сделок.
                         li.youllget__item
                             p.youllget__item-num 04/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Создать неотразимые предложения, 
                                 | которые невозможно отклонить.
                         li.youllget__item
                             p.youllget__item-num 05/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Повысить конверсию и доходность 
                                 | каждой сделки.
                         li.youllget__item
                             p.youllget__item-num 06/
-                            p.youllget__item-text
+                            p.youllget__item-text.youllget__text-anim
                                 | Максимизировать эффективность 
                                 | работы и сэкономить время.
                     .youllget__img-wrapper
@@ -97,11 +99,11 @@ html(lang="en")
                     h2.results__title.page__subtitle
                         | Какие результаты вы получите с нашим тренингом и приложением?
                     .results__descr-wrapper
-                        p.results__descr.page__subdescr
+                        p.results__descr.page__subdescr.results__text-anim
                             | Присоединяйтесь к нашему тренингу и получите эксклюзивное приложение, 
                             | которое станет вашим верным спутником на пути к величию. Готовьтесь к 
                             | невероятным продажам, лояльным клиентам и финансовой независимости.
-                        p.results__descr.page__subdescr
+                        p.results__descr.page__subdescr.results__text-anim
                             | Откройте двери к безграничному успеху в продажах! Не упустите свой 
                             | шанс обрести доминирование в мире продаж! 
 
@@ -145,10 +147,10 @@ html(lang="en")
 
             section.page__priceapp.priceapp
                 .priceapp__container.container
-                    .priceapp__wrapper
+                    .priceapp__wrapper.priceapp__bg-anim
                         h2.priceapp__title.page__subtitle
                             | Почувствуйте вкус победы прямо сейчас!
-                        p.priceapp__descr.page__subdescr
+                        p.priceapp__descr.page__subdescr.priceapp__text-anim
                             | Сделайте решительный шаг 
                             | и приобретите наше #[a.priceapp__descr-link(href="#") готовое приложение по продажам]
                             | любого продукта уже сегодня! Наши эксперты и инновационные инструменты ждут 
@@ -157,7 +159,7 @@ html(lang="en")
 
             section.page__products.products
                 .products__container.container
-                    p.products__descr-top.products__descr.page__subdescr
+                    p.products__descr-top.products__descr.page__subdescr.products__text-anim
                         | Если Вы амбициозный предприниматель, торговый гений или продажный 
                         | магнат, наш тренинг создан специально для Вас! 
                     ul.products__list
@@ -177,7 +179,7 @@ html(lang="en")
                                     .products__item-image-border-cliped
                                 .products__item-image-background
                                     img.products__item-image(src="assets/img/icons/sticker-man.webp", alt="", width="184", height="192")
-                    p.products__descr-bottom.products__descr.page__subdescr
+                    p.products__descr-bottom.products__descr.page__subdescr.products__text-anim
                         | Без разницы, какой продукт Вы продаете — от шоколадных конфет до роскошных 
                         | автомобилей и риелторских услуг — наше готовое предложение по продажам поможет 
                         | Вам увеличить доход и стать непобедимым в Вашей нише.
@@ -187,7 +189,7 @@ html(lang="en")
                     h2.program__title.page__subtitle
                         | Что включает наша программа тренинга и приложение? 
                     .program__descr-wrapper
-                        p.program__descr.page__subdescr
+                        p.program__descr.page__subdescr.program__text-anim
                             | Мы сосредоточены на развитии высокоэффективных навыков продаж, умениях 
                             | управлять клиентскими отношениями, благодаря мощным функциям аналитики, 
                             | персонализации и автоматизации, вы сможете оптимизировать процесс 
@@ -216,9 +218,9 @@ html(lang="en")
                             img(src="assets/img/records-elipse.webp", alt="", width="545", height="546")
                             img(src="assets/img/records-semielipse.svg", alt="", width="273", height="546")
                         .records__descrs
-                            p.records__descr.page__subdescr
+                            p.records__descr.page__subdescr.records__text-anim
                                 | Не упустите возможность превратить свой бизнес в процветающую империю! 
-                            p.records__descr.page__subdescr
+                            p.records__descr.page__subdescr.records__text-anim
                                 | Закажите наше готовое приложение по продажам уже сегодня и начните свой 
                                 | путь к беспрецедентному успеху. Наши тренинги стоят 
                                 | каждого вложенного в них доллара!
@@ -234,7 +236,7 @@ html(lang="en")
                         .trening__image-right.trening__image
                             img(src="assets/img/trening/phone-display2.webp", alt="")
 
-                        .trening__descr-wrapper
+                        .trening__descr-wrapper.trening__text-anim
                             p.trening__descr.page__subdescr
                                 span
                                     | Независимо от того, какой продукт или услугу вы предлагаете, наша программа 
@@ -246,23 +248,25 @@ html(lang="en")
                     | Оставляй заявку и приходи бесплатно
                 .footer__main-wrapper
                     .footer__form-wrapper
-                        p.footer__descr.page__subdescr
+                        p.footer__descr.page__subdescr.footer__text-anim
                             | Если что-то хотите уточнить, звоните прямо сейчас 
                             | и станьте королем продаж завтра! 
 
                         ul.footer__form-list
                             li.footer__form-item
                                 p.footer__form-descr
-                                    | Напиши нам “Я в деле”
-                                    | И мы поможем стать номер 1  
-
-                    //- form.footer__form(action="#") 
-                        input.footer__forn-input(type="text", placeholder="Ваше имя")
-                        input.footer__forn-input(type="phone", placeholder="Телефон")
+                                    | Напиши нам 
+                                    span.footer__form-descr-bold “Я в деле” И мы поможем стать номер 1  
+                            li.footer__form-item
+                                form.footer__form(action="#") 
+                                    input.footer__forn-input(type="text", placeholder="Ваше имя")
+                                    input.footer__forn-input(type="phone", placeholder="Телефон")
                     .footer__btn-ticket-wrapper
                         a.footer__btn-ticket.btn-ticket(href="#") 
+                            +svgIcon('circled-text', 'btn-ticket__circled-text')
+                            .btn-ticket__bg
                             span.btn-ticket__label Запуск 
                                 span Бесплатно!
-                        +svgIcon('arrow', 'footer__btn-ticket-arrow')
+                        +svgIcon('arrow', 'footer__btn-ticket-arrow footer__arrow-anim')
 
         script(src="assets/js/main.min.js") 
