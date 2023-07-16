@@ -22,6 +22,40 @@
     align-items: center;
 }
 
+.youllget__text-anim {
+    position: relative;
+
+    animation: youllgetTextHide 1s ease-in-out both;
+
+    &.--show {
+        animation: youllgetTextShow 1s ease-in-out both;
+    }
+}
+
+@keyframes youllgetTextHide {
+    from {
+        right: 0;
+        opacity: 100;
+    }
+
+    to {
+        right: -40px;
+        opacity: 0;
+    }
+}
+
+@keyframes youllgetTextShow {
+    from {
+        right: -40px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 100;
+    }
+}
+
 .youllget__item-num {
     font-family: Montserrat;
     font-size: 100px;
@@ -33,19 +67,30 @@
     background-clip: text;
     color: transparent;
     -webkit-text-stroke: 1px white;
+
+    transition: 500ms ease-in-out color;
 }
 
-.youllget__item:nth-of-type(2) > .youllget__item-num {
-    -webkit-text-stroke: unset;
-    color: white;
+.youllget__item:nth-of-type(2) {
+    &:hover .youllget__item-num {
+        color: white;
+    }
 }
 
-.youllget__item:nth-of-type(4) > .youllget__item-num {
-    -webkit-text-stroke-width: 3px;
+.youllget__item:nth-of-type(4) {
+
+    &:hover .youllget__item-num {
+        -webkit-text-stroke-width: 3px;
+        color: white;
+    }
 }
 
-.youllget__item:nth-of-type(6) > .youllget__item-num {
-    -webkit-text-stroke-width: 10px;
+.youllget__item:nth-of-type(6) {
+
+    &:hover .youllget__item-num {
+        -webkit-text-stroke-width: 10px;
+        color: white;
+    }
 }
 
 .youllget__item-text {
@@ -67,7 +112,6 @@
     align-items: center;
     width: max-content;
     height: max-content;
-    z-index: 1;
     
 
     &::before {
@@ -77,9 +121,14 @@
         right: -194px;
         z-index: -1;
     }
+
+    &:hover  .youllget__img-play-btn {
+        opacity: 100;
+    }
 }
 
 .youllget__img {
+    display: flex;
     transform: rotate(-9.748deg);
     transform-origin: center;
     border-radius: 20px;
@@ -88,6 +137,9 @@
 }
 
 .youllget__img-play-btn {
+    display: flex;
+    opacity: 0;
+    transition: 500ms ease-in-out opacity;
     position: absolute;
     fill: #D9D9D9;
 

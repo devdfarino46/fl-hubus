@@ -73,10 +73,28 @@
     position: absolute;
     background: #202020;
     top: calc(594px / 1178px * 100%);
-    width: 150vw;
-    transform: rotate(15.967deg);
+    width: 128vw;
+    transform: rotate(15.9deg) skewX(15.9deg);
     display: flex;
     justify-content: center;
+}
+
+.trening__text-anim {
+    left: 128vw;
+
+    &.--show {
+        animation: treningTextShow 1s ease-in-out both;
+    }
+}
+
+@keyframes treningTextShow {
+    from {
+        left: 128vw;
+    }
+
+    to {
+        left: -14vw;
+    }
 }
 
 .trening__descr {

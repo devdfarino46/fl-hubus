@@ -38,6 +38,28 @@
     font-size: 30px;
 }
 
+.records__text-anim {
+    position: relative;
+    right: -40px;
+    opacity: 0;
+
+    &.--show {
+        animation: recordsTextShow 1s ease-in-out both;
+    }
+}
+
+@keyframes recordsTextShow {
+    from {
+        right: -40px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 100;
+    }
+}
+
 @media screen and (max-width: 1575px) {
     .records__images img {
         width: auto;

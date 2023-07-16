@@ -7,44 +7,62 @@
     width: 242px;
     height: 242px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 153px;
-        height: 160px;
-        background: linear-gradient(90deg, #9AB4F8 0%, #0145D4 83.65%);
-        border-radius: 100%;
-        transform: rotate(65.161deg);
-    }
-
-    &::after {
-        content: url('../img/icons/circled-text3.svg');
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        font-size: 16.3px;
-        font-weight: 800;
-        line-height: 100%; /* 16.3px */
-        fill: white;
-
-        animation-name: btn-circled-text;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-
     &:hover {
-        &::after {
-            content: url('../img/icons/circled-text.svg');
+        .btn-ticket__circled-text {
+            fill: white;
         }
 
         .btn-ticket__label {
             opacity: 100;
         }
+
+        .btn-ticket__bg::after {
+            left: -100%;
+        }
     }
+}
+
+.btn-ticket__bg {
+    position: absolute;
+    width: 153px;
+    height: 160px;
+    border-radius: 100%;
+    overflow: hidden;
+    background: #0145D4;
+    transform: rotate(65.16deg);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 153px;
+        height: 160px;
+        left: 0;
+        transition: 500ms ease-in-out left;
+        background: linear-gradient(90deg, #9AB4F8 0%, #0145D4 83.65%);
+    }
+}
+
+.btn-ticket__circled-text {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 16.3px;
+    font-weight: 800;
+    line-height: 100%; /* 16.3px */
+    fill: #0145D4 ;
+    transition: 500ms ease-in-out fill;
+
+    animation-name: btn-circled-text;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .btn-ticket__label {
@@ -52,7 +70,7 @@
     z-index: 2;
     width: 102px;
     margin-top: -4px;
-    transition: 150ms ease-in-out opacity;
+    transition: 500ms ease-in-out opacity;
 
     color: #FFF;
     text-align: center;

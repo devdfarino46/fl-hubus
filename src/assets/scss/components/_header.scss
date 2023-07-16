@@ -43,7 +43,6 @@
 }
 
 .header__title {
-    position: relative;
     text-align: center;
     font-size: 80px;
     font-weight: 700;
@@ -54,51 +53,54 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: headerTopText 1s ease-in-out;
-
-    &>span {
-        animation: headerOpacityText 1s ease-in-out;
-    }
 }
-.header__descr {
-    position: relative;
-    color: #FFF;
-    font-size: 30px;
-    text-align: center;
-    font-weight: 600;
-    line-height: 150%; /* 45px */
 
-    margin-bottom: 30px;
-    max-width: 432px;
-    overflow: hidden;
-
+.header__descr-wrapper {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
     column-gap: 20px;
-
-    animation: headerTopText 1s ease-in-out;
+    max-width: 432px;
+    overflow: hidden;
+    padding-bottom: 44px;
 }
 
 .header__descr-item {
     position: relative;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 
     transition: 0.8s ease-in-out left;
+}
 
-    &>span {
-        animation: headerOpacityText 1s ease-in-out;
-    }
+.header__descr {
+    color: #FFF;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 150%; /* 45px */
 }
 
 .header__descr-regular {
     font-weight: 400;
 }
 
+.header__text-anim {
+    position: relative;
+    top: 49px;
+    opacity: 0;
+    
+    &.--show {
+        animation: headerTextShow 1s ease-in-out both;
+    }
+}
+
 .header__installs-btns-wrapper {
     display: flex;
     gap: 8px;
-    padding-bottom: 44px;
 }
 
 .header__main-btn-wrapper {
@@ -147,22 +149,14 @@
     }
 }
 
-@keyframes headerTopText {
+@keyframes headerTextShow {
     from {
-        top: 40px;
-    }
-
-    to {
-        top: 0;
-    }
-}
-
-@keyframes headerOpacityText {
-    from {
+        top: 49px;
         opacity: 0;
     }
 
     to {
+        top: 0;
         opacity: 100;
     }
 }
@@ -252,6 +246,10 @@
 @media screen and (max-width: 475px) {
     .header {
         margin-bottom: 400px;
+    }
+
+    .header__title {
+        font-size: 25px;
     }
     .header__image-left {
         margin-top: 80px;

@@ -9,19 +9,41 @@
 .priceapp__wrapper {
     padding: 64px 89px 89px;
     border-radius: 100ch;
-    border: 5px solid #FFF;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(32, 32, 32, 0.00) 100%);
     backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: transparent;
+    outline: 5px solid #FFF;
+    outline-offset: -5px;
+}
+
+.priceapp__bg-anim {
+
+    &.--anim {
+        animation: priceAppBg 500ms ease-in-out both;
+    }
+}
+
+@keyframes priceAppBg {
+    from {
+        background: transparent;
+        outline-color: #FFF;
+    }
+
+    to {
+        background: #202020;
+        outline-color: transparent;
+    }
 }
 
 .priceapp__title {
     background: linear-gradient(90deg, #9AB4F8 0%, #1915FF 83.65%);
+    transition: 300ms ease-in-out color;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     max-width: 1076px;
 
     text-align: center;
@@ -32,12 +54,40 @@
     max-width: 997px;
 }
 
+.priceapp__text-anim {
+    position: relative;
+    right: -40px;
+    opacity: 0;
+    
+    &.--show {
+        animation: priceappTextShow 1s ease-in-out both;
+    }
+}
+
+@keyframes priceappTextShow {
+    from {
+        right: -40px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 100;
+    }
+}
+
 .priceapp__descr-link {
     background: linear-gradient(90deg, #C6A5D4 0%, #AC3CDC 83.65%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     font-weight: 500;
+
+    transition: 300ms ease-in-out color;
+
+    &:hover {
+        color: #AC3CDC;
+    }
 }
 
 @media screen and (max-width: 1100px ) {

@@ -29,21 +29,49 @@
     max-width: 515px;
 }
 
+.footer__text-anim {
+    position: relative;
+    left: -40px;
+    opacity: 0;
+
+    &.--show {
+        animation: footerTextShow 1s ease-in-out both;
+    }
+}
+
+@keyframes footerTextShow {
+    from {
+        left: -40px;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 100;
+    }
+}
+
 $formWidth: 396px;
 
 .footer__form-list {
     max-width: 396px;
     width: 396px;
-    height: 151px;
-    display: flex;
+    display: grid;
+    column-gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .footer__form-item {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+
+    left: 0;
+    transition: 0.8s ease-in-out left;
 }
 
 .footer__form-descr {
@@ -53,6 +81,10 @@ $formWidth: 396px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 37.5px */
+}
+
+.footer__form-descr-bold {
+    font-weight: 700;
 }
 
 .footer__form {
@@ -95,13 +127,35 @@ $formWidth: 396px;
     z-index: -1;
 }
 
-.footer__btn-ticket {
-    &::before {
-        background: linear-gradient(73deg, #C6A5D4 0%, #AC3CDC 83.65%);
+.footer__arrow-anim {
+    bottom: -354px;
+
+    &.--show {
+        animation: footerArrowShow 1s ease-in-out both;
+    }
+}
+
+@keyframes footerArrowShow {
+    from {
+        bottom: -354px;
     }
 
-    &::after {
-        content: url('../img/icons/circled-text2.svg');
+    to {
+        bottom: -157.17px;
+    }
+}
+
+.footer__btn-ticket {
+    .btn-ticket__bg {
+        background: #AC3CDC;
+
+        &::after {
+            background: linear-gradient(73deg, #C6A5D4 0%, #AC3CDC 83.65%);
+        }
+    }
+
+    .btn-ticket__circled-text {
+        fill: #AC3CDC;
     }
 }
 
