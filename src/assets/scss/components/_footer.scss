@@ -55,7 +55,6 @@ $formWidth: 396px;
 
 .footer__form-list {
     max-width: 396px;
-    width: 396px;
     display: grid;
     column-gap: 20px;
     grid-auto-flow: column;
@@ -68,7 +67,7 @@ $formWidth: 396px;
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
     left: 0;
     transition: 0.8s ease-in-out left;
@@ -90,6 +89,7 @@ $formWidth: 396px;
 .footer__form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 71px;
     margin-top: 46px;
 }

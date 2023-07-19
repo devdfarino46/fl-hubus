@@ -61,6 +61,25 @@
         z-index: -1;
         left: -476px;
         bottom: -610px;
+
+        animation: resultsGradientMove 10s linear infinite;
+    }
+}
+
+@keyframes resultsGradientMove {
+    from {
+        left: -476px;
+        transform: scale(1);
+    }
+
+    50% {
+        left: 0px;
+        transform: scale(1.3);
+    }
+
+    to {
+        left: -476px;
+        transform: scale(1);
     }
 }
 

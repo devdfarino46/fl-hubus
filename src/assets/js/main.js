@@ -38,7 +38,7 @@ function inSection(section) {
                 count=0;
             }
         }
-    }, 3800);
+    }, 2800);
 
     $(item[1]).on('mouseover', ev => {
         item.css('left', '0px');
@@ -194,7 +194,7 @@ function inSection(section) {
                 count=0;
             }
         }
-    }, 3800);
+    }, 2800);
 
     $(item[0]).on('mouseover', ev => {
         item.css('left', `calc(-100% - ${gap})`);
