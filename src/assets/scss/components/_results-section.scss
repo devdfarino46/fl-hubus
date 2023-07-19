@@ -28,58 +28,34 @@
     line-height: 150%; /* 37.5px */
 }
 
-.results__text-anim {
-    position: relative;
-    left: -40px;
-    opacity: 0;
-
-    &.--show {
-        animation: resultsTextShow 1s ease-in-out both;
-    }
-}
-
-@keyframes resultsTextShow {
-    from {
-        left: -40px;
-        opacity: 0;
-    }
-    to {
-        left: 0;
-        opacity: 100;
-    }
-}
-
 .results__list {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 
-    &::before {
-        position: absolute;
-        content: url('../img/results-gradient.svg');
-        z-index: -1;
-        left: -476px;
-        bottom: -610px;
+    ._gradient {
+        background-image: url('../img/bg-gradients/results.svg');
+        width: 806.01px;
+        height: 651.04px;
+        left: -228px;
+        bottom: -360.04px;
 
-        animation: resultsGradientMove 10s linear infinite;
+        animation: resultsGradient 7s ease-in-out infinite;
     }
 }
 
-@keyframes resultsGradientMove {
+@keyframes resultsGradient {
     from {
-        left: -476px;
-        transform: scale(1);
+        transform: translateX(0);
     }
 
     50% {
-        left: 0px;
-        transform: scale(1.3);
+        transform: translateX(300px);
     }
 
     to {
-        left: -476px;
-        transform: scale(1);
+        transform: translateX(0);
     }
 }
 
@@ -105,10 +81,7 @@
 }
 
 .results__item-icon {
-    animation: 
-        iconRotate 2s ease-in-out infinite,
-        iconEffect 2s ease-in-out infinite;
-    animation-delay: 3s;
+    animation: resultsIconAnim 2s ease-in-out infinite;
 }
 
 .results__item-label {
@@ -118,18 +91,20 @@
     line-height: 150%; /* 45px */
 }
 
-@keyframes iconRotate {
-    from { transform: rotate(0deg); }
+@keyframes resultsIconAnim {
+    from {
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
 
-    100% { transform: rotate(360deg); }
-}
+    50% {
+        filter: blur(5px);
+    }
 
-@keyframes iconEffect {
-    from{ filter: blur(0px); }
-
-    50% { filter: blur(5px); }
-
-    to { filter: blur(0px); }
+    100% {
+        transform: rotate(360deg);
+        filter: blur(0px);
+    }
 }
 
 @media screen and (max-width: 1080px) {

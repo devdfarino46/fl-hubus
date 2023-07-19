@@ -1,5 +1,7 @@
 .youllget {
+    position: relative;
     margin-bottom: 150px;
+    z-index: 2;
 }
 
 .youllget__container {
@@ -20,40 +22,6 @@
     gap: 20px 40px;
     padding: 6px 0;
     align-items: center;
-}
-
-.youllget__text-anim {
-    position: relative;
-
-    animation: youllgetTextHide 1s ease-in-out both;
-
-    &.--show {
-        animation: youllgetTextShow 1s ease-in-out both;
-    }
-}
-
-@keyframes youllgetTextHide {
-    from {
-        right: 0;
-        opacity: 100;
-    }
-
-    to {
-        right: -40px;
-        opacity: 0;
-    }
-}
-
-@keyframes youllgetTextShow {
-    from {
-        right: -40px;
-        opacity: 0;
-    }
-
-    to {
-        right: 0;
-        opacity: 100;
-    }
 }
 
 .youllget__item-num {
@@ -112,46 +80,31 @@
     align-items: center;
     width: max-content;
     height: max-content;
-    
 
-    &::before {
-        content: url('../img/youllget-gradient.svg');
-        position: absolute;
-        top: -232px;
-        right: -194px;
-        z-index: -1;
-        animation: youllgetGradientMove 10s linear infinite;
+    ._gradient {
+        background-image: url('../img/bg-gradients/youllget-image.svg');
+        width: 770px;
+        height: 700px;
+        bottom: -373.71px;
+        left: -309.4px;
+        animation: youllgetImageGradient 7s ease-in-out infinite;
     }
 
     &:hover  .youllget__img-play-btn {
         opacity: 100;
     }
 }
-
-@keyframes youllgetGradientMove {
+@keyframes youllgetImageGradient {
     from {
-        right: -194px;
-        transform: scale(1);
-    }
-
-    25% {
-        right: 200px;
-        transform: scale(1.3);
+        transform: translateX(0) scale(1);
     }
 
     50% {
-        right: -194px;
-        transform: scale(1);
-    }
-
-    75% {
-        right: -494px;
-        transform: scale(1.3);
+        transform: translateX(400px) scale(0.7);
     }
 
     to {
-        right: -194px;
-        transform: scale(1);
+        transform: translateX(0) scale(1);
     }
 }
 

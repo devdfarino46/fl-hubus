@@ -22,6 +22,15 @@ body {
     margin: 0 auto;
 }
 
+.gradient {
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(125px);
+    z-index: -1;
+}
+
 .page__subtitle {
     color: #FFF;
     font-size: 60px;

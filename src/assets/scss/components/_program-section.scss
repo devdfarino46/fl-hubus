@@ -24,28 +24,6 @@
     max-width: 785px;
 }
 
-.program__text-anim {
-    position: relative;
-    left: -40px;
-    opacity: 0;
-
-    &.--show {
-        animation: programTextShow 1s ease-in-out both;
-    }
-}
-
-@keyframes programTextShow {
-    from {
-        left: -40px;
-        opacity: 0;
-    }
-
-    to {
-        left: 0;
-        opacity: 100;
-    }
-}
-
 .program__subtitle {
     max-width: 574px;
     text-align: center;

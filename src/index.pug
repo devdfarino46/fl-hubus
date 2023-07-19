@@ -11,10 +11,12 @@ html(lang="en")
         title Document
     body 
         header.header
+            ._gradient-left.gradient
+            ._gradient-right.gradient
             .header__container.container
                 .header__main-wrapper
                     h1.header__title-wrapper
-                        p.header__title.header__text-anim
+                        p.header__title
                             span
                                | Инновационные #[br]
                                | бизнес-инструменты #[br]
@@ -52,7 +54,10 @@ html(lang="en")
                         span Бесплатно!
 
             .header__images-wrapper
+                .header__image-wrapper-left.header__image-wrapper
+                    ._gradient.gradient
                     img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
+                .header__image-wrapper-right.header__image-wrapper
                     img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
 
         main.page
@@ -61,35 +66,36 @@ html(lang="en")
                     ul.youllget__list
                         li.youllget__item
                             p.youllget__item-num 01/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Увеличить свои продажи в несколько раз и стать 
                                 | настоящим гуру с прибылью от 150 000 ₽ в месяц.
                         li.youllget__item
                             p.youllget__item-num 02/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Привлечь новых клиентов и создать 
                                 | базу лояльных покупателей.
                         li.youllget__item
                             p.youllget__item-num 03/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Овладеть мощными техниками переговоров 
                                 | и заключения сделок.
                         li.youllget__item
                             p.youllget__item-num 04/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Создать неотразимые предложения, 
                                 | которые невозможно отклонить.
                         li.youllget__item
                             p.youllget__item-num 05/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Повысить конверсию и доходность 
                                 | каждой сделки.
                         li.youllget__item
                             p.youllget__item-num 06/
-                            p.youllget__item-text.youllget__text-anim
+                            p.youllget__item-text
                                 | Максимизировать эффективность 
                                 | работы и сэкономить время.
                     .youllget__img-wrapper
+                        ._gradient.gradient
                         img.youllget__img(src="assets/img/youllget@517px.webp", alt="", width="516", height="344")
                         a.youllget__img-play-btn(href="#") 
                             +svgIcon('play')
@@ -99,15 +105,16 @@ html(lang="en")
                     h2.results__title.page__subtitle
                         | Какие результаты вы получите с нашим тренингом и приложением?
                     .results__descr-wrapper
-                        p.results__descr.page__subdescr.results__text-anim
+                        p.results__descr.page__subdescr
                             | Присоединяйтесь к нашему тренингу и получите эксклюзивное приложение, 
                             | которое станет вашим верным спутником на пути к величию. Готовьтесь к 
                             | невероятным продажам, лояльным клиентам и финансовой независимости.
-                        p.results__descr.page__subdescr.results__text-anim
+                        p.results__descr.page__subdescr
                             | Откройте двери к безграничному успеху в продажах! Не упустите свой 
                             | шанс обрести доминирование в мире продаж! 
 
                     ul.results__list
+                        ._gradient.gradient
                         .results__item-wrapper 
                             li.results__item
                                 img.results__item-icon(src="assets/img/icons/results/result4.svg", alt="")
@@ -147,10 +154,10 @@ html(lang="en")
 
             section.page__priceapp.priceapp
                 .priceapp__container.container
-                    .priceapp__wrapper.priceapp__bg-anim
+                    .priceapp__wrapper
                         h2.priceapp__title.page__subtitle
                             | Почувствуйте вкус победы прямо сейчас!
-                        p.priceapp__descr.page__subdescr.priceapp__text-anim
+                        p.priceapp__descr.page__subdescr
                             | Сделайте решительный шаг 
                             | и приобретите наше #[a.priceapp__descr-link(href="#") готовое приложение по продажам]
                             | любого продукта уже сегодня! Наши эксперты и инновационные инструменты ждут 
@@ -159,7 +166,7 @@ html(lang="en")
 
             section.page__products.products
                 .products__container.container
-                    p.products__descr-top.products__descr.page__subdescr.products__text-anim
+                    p.products__descr-top.products__descr.page__subdescr
                         | Если Вы амбициозный предприниматель, торговый гений или продажный 
                         | магнат, наш тренинг создан специально для Вас! 
                     ul.products__list
@@ -179,7 +186,7 @@ html(lang="en")
                                     .products__item-image-border-cliped
                                 .products__item-image-background
                                     img.products__item-image(src="assets/img/icons/sticker-man.webp", alt="", width="184", height="192")
-                    p.products__descr-bottom.products__descr.page__subdescr.products__text-anim
+                    p.products__descr-bottom.products__descr.page__subdescr
                         | Без разницы, какой продукт Вы продаете — от шоколадных конфет до роскошных 
                         | автомобилей и риелторских услуг — наше готовое предложение по продажам поможет 
                         | Вам увеличить доход и стать непобедимым в Вашей нише.
@@ -190,7 +197,7 @@ html(lang="en")
                         | Что включает наша программа тренинга и приложение? 
                     .program__images-wrapper
                         .program__descr-wrapper
-                            p.program__descr.page__subdescr.program__text-anim
+                            p.program__descr.page__subdescr
                                 | Мы сосредоточены на развитии высокоэффективных навыков продаж, умениях 
                                 | управлять клиентскими отношениями, благодаря мощным функциям аналитики, 
                                 | персонализации и автоматизации, вы сможете оптимизировать процесс 
@@ -219,13 +226,13 @@ html(lang="en")
                             img(src="assets/img/records-elipse.webp", alt="", width="545", height="546")
                             img(src="assets/img/records-semielipse.svg", alt="", width="273", height="546")
                         .records__descrs
-                            p.records__descr.page__subdescr.records__text-anim
+                            p.records__descr.page__subdescr
                                 | Не упустите возможность превратить свой бизнес в процветающую империю! 
                             .records__play-btn-wrapper
                                 button.records__play-btn
                                 p.records__play-btn-label.page__subdescr Смотреть 
                                     span видеопрезентацию
-                            p.records__descr.page__subdescr.records__text-anim
+                            p.records__descr.page__subdescr
                                 | Закажите наше готовое приложение по продажам уже сегодня и начните свой 
                                 | путь к беспрецедентному успеху. Наши тренинги стоят 
                                 | каждого вложенного в них доллара!
@@ -236,12 +243,15 @@ html(lang="en")
                         | Кому подходит наш тренинг? #[br]
                         | Если вы...
                     .trening__images-wrapper
+                        ._gradient.gradient
                         .trening__image-left.trening__image
+                            ._gradient.gradient
                             img(src="assets/img/trening/phone-display1.webp", alt="")
                         .trening__image-right.trening__image
+                            ._gradient.gradient
                             img(src="assets/img/trening/phone-display2.webp", alt="")
 
-                        .trening__descr-wrapper.trening__text-anim
+                        .trening__descr-wrapper
                             p.trening__descr.page__subdescr
                                 span
                                     | Независимо от того, какой продукт или услугу вы предлагаете, наша программа 
