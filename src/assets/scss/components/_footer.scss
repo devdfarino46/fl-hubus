@@ -104,6 +104,8 @@ $formWidth: 396px;
     border: none;
     outline: none;
 
+    width: 100%;
+
     display: flex;
     padding-bottom: 15px;
     border-bottom: 1px solid #FFF;
@@ -127,24 +129,6 @@ $formWidth: 396px;
     z-index: -1;
 }
 
-.footer__arrow-anim {
-    bottom: -354px;
-
-    &.--show {
-        animation: footerArrowShow 1s ease-in-out both;
-    }
-}
-
-@keyframes footerArrowShow {
-    from {
-        bottom: -354px;
-    }
-
-    to {
-        bottom: -157.17px;
-    }
-}
-
 .footer__btn-ticket {
     .btn-ticket__bg {
         background: #AC3CDC;
@@ -161,6 +145,15 @@ $formWidth: 396px;
 
 .footer__btn-ticket .btn-ticket__text-border {
     fill: linear-gradient(73deg, #C6A5D4 0%, #AC3CDC 83.65%);
+}
+
+.footer__arrow-anim {
+    transform: translateY(100%);
+    transition: 1s ease-in-out;
+
+    &.--show {
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width: 1380px) {

@@ -1,202 +1,97 @@
-function inSection(section) {
-    let sectionPosStart = section.position().top;
-    let sectionPosEnd = section.position().top + section.height();
+function inSection(section = $('.page__section, .header, .footer')) {
     if (
-        $(window).scrollTop() >= sectionPosStart - $(window).height()+200
+        $(window).height() + $(window).scrollTop() > section.offset().top && 
+        $(window).scrollTop() < section.offset().top + section.height()
     ) {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
 
-// Items slide
-{
-    let item =  $('.header__descr-item');
-    let gap = $('.header__descr-wrapper').css('column-gap');
 
-    let count = 0;
-    let state = true;
 
-    $(item[0]).on('mouseover', ev => {
-        state = false;
-    });
+function Slider(section = $('.page__section')) {
+    this.state = false;
+    this.slider = section.find('.slider');
 
-    $(item[0]).on('mouseleave', ev => {
-        state = true;
-    });
-
+    this.count = 0;
     setInterval( () => {
-        if(state) {
-            if (count === 0) {
-                item.css('left', `calc(-100% - ${gap})`);
-                count+=1;
-            }
-            else if (count === 1) {
-                item.css('left', '0px');
-                count=0;
+        if(this.state) {
+            if (this.count === 0) {
+                this.getItem(1).item.css('order', 'unset');
+                this.slider.scrollLeft(0);
+                this.slider.animate({
+                    scrollLeft: this.getItem(1).position - this.slider.position().left
+                });
+                this.count = 1;
+            } else if (this.count > 0) {
+                this.getItem(1).item.css('order', '-1');
+                this.slider.scrollLeft(0);
+                this.slider.animate({
+                    scrollLeft: this.getItem(0).position - this.slider.position().left
+                });
+                this.count = 0;
             }
         }
     }, 2800);
 
-    $(item[1]).on('mouseover', ev => {
-        item.css('left', '0px');
-    });
-}
-
-// Header text anim
-{
-    let text = $('.header__text-anim');
-    let section = $('.header');
-
-    $(window).on('scroll load', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Youllget text anim
-{
-    let text = $('.youllget__text-anim');
-    let section = $('.youllget');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Results text anim
-{
-    let text = $('.results__text-anim');
-    let section = $('.results');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Pricaapp bg anim
-{
-    let bg = $('.priceapp__bg-anim');
-    let text = $('.priceapp__text-anim')
-    let section = $('.priceapp');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            bg.addClass('--anim');
-            text.addClass('--show');
-        }
-    });
-}
-
-// Products text anim
-{
-    let text = $('.products__text-anim')
-    let section = $('.products');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Program text anim
-{
-    let text = $('.program__text-anim')
-    let section = $('.program');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Records text anim
-{
-    let text = $('.records__text-anim')
-    let section = $('.records');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Trening text anim
-{
-    let text = $('.trening__text-anim')
-    let section = $('.trening');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Footer text anim
-{
-    let text = $('.footer__text-anim')
-    let section = $('.footer');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Footer arrow anim
-{
-    let text = $('.footer__arrow-anim')
-    let section = $('.footer');
-
-    $(window).on('scroll', ev => {
-        if (inSection(section) ) {
-            text.addClass('--show');
-        }
-    });
-}
-
-// Footer form wrapper slide
-{
-    let item =  $('.footer__form-item');
-    let gap = $('.footer__form-list').css('column-gap');
-
-    let count = 0;
-    let state = true;
-
-    $(item[1]).on('mouseover', ev => {
-        state = false;
-    });
-
-    $(item[1]).on('mouseleave', ev => {
-        state = true;
-    });
-
-    setInterval( () => {
-        if(state) {
-            if (count === 0) {
-                item.css('left', `calc(-100% - ${gap})`);
-                count+=1;
-            }
-            else if (count === 1) {
-                item.css('left', '0px');
-                count=0;
-            }
-        }
-    }, 2800);
-
-    $(item[0]).on('mouseover', ev => {
-        item.css('left', `calc(-100% - ${gap})`);
+    this.slider.find('.footer__forn-input').on('focus', ev => {
+        this.state = false;
     })
 }
+Slider.prototype.getItem = function(index) {
+    let item = this.slider.find('.slider__item[data-slide-to=\''+index+'\'');
+    let itemIndex = Number(item.prop('data-slide-to'));
+    let position = item.position().left;
+
+    return {item, itemIndex, position}
+}
+
+let header = $('.header');
+let footer = $('.footer');
+
+let animSections = $('.anim-section');
+let textShowAnim = $('.text-show-anim');
+let footerArrowAnim = $('.footer__arrow-anim');
+
+let headerSlider = new Slider(header);
+let footerSlider = new Slider(footer);
+
+$(window).on('load scroll', ev => {
+    if ( inSection(header)) {
+        headerSlider.state = true;
+        header.find(textShowAnim).addClass('--show');
+    } else {
+        headerSlider.state = false;
+        header.find(textShowAnim).removeClass('--show');
+    }
+    
+    if ( inSection(footer) ) {
+        footerSlider.state = true;
+        footer.find(textShowAnim).addClass('--show');
+        footerArrowAnim.addClass('--show');
+    } else {
+        footerSlider.state = false;
+        footer.find(textShowAnim).removeClass('--show');
+        footerArrowAnim.removeClass('--show');
+    }
+
+    animSections.each( (i, section) => {
+        section = $(section);
+
+        if ( inSection(section)) {
+            section.find(textShowAnim).addClass('--show');
+        } else {
+            section.find(textShowAnim).removeClass('--show');
+        }
+    });
+});
+
+$(' .records__descrs').on('click', ev => {
+    $('.records__play-btn-wrapper').css({
+        height: '173.5px',
+        transition: '1s ease-in-out',
+        opacity: '1'
+    })
+})

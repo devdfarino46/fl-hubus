@@ -159,4 +159,11 @@
     .youllget__item {
         flex-direction: column;
     }
+
+    .youllget__item-text.text-show-anim {
+        transform: translateY(0);
+        &.--show {
+            transform: translateX(-10px);
+        }
+    }
 }

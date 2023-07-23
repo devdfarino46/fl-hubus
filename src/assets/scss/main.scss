@@ -22,6 +22,40 @@ body {
     margin: 0 auto;
 }
 
+.slider {
+    overflow-x: hidden;
+}
+
+.text-show-anim {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1000ms ease-in-out;
+    transition-delay: 0.2s;
+
+    &.--show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &._horizontal {
+        transform: translateY(0);
+        transform: translateX(-20px);
+
+        &.--show {
+            transform: translateX(0);
+        }
+    }
+
+    &._horizontal-reverse {
+        transform: translateY(0);
+        transform: translateX(20px);
+
+        &.--show {
+            transform: translateX(0);
+        }
+    }
+}
+
 .gradient {
     position: absolute;
     background-size: 100% 100%;

@@ -46,19 +46,14 @@
 
 .trening__image {
     position: relative;
-    box-sizing: border-box;
-    background: url('../img/trening/phone.webp');
-    background-size: 100% 100%;
     width: 441px;
     height: 1022.5px;
     display: flex;
+    background: transparent;
 
-    img {
-        position: relative;
-        top: calc(15.5px / 1022.5px * 100%);
-        left: calc(44.5px / 441px * 100%);
-        width: calc(378.75px / 441px * 100%);
-        height: calc(968.5px / 1022.5px * 100%);
+    svg {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -122,9 +117,17 @@
     background: #202020;
     top: calc(594px / 1178px * 100%);
     width: 128vw;
-    transform: rotate(15.9deg) skewX(15.9deg);
     display: flex;
     justify-content: center;
+}
+
+.trening__descr-wrapper.text-show-anim._horizontal {
+    transform: rotate(15.9deg) skewX(15.9deg) translateX(150vw);
+    opacity: 1;
+    
+    &.--show {
+        transform: rotate(15.9deg) skewX(15.9deg) translateX(0);
+    }
 }
 
 .trening__descr {
