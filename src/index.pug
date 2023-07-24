@@ -1,15 +1,15 @@
 include _mixins.pug
 
 doctype html
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="Инновационные бизнес-инструменты для увеличения продажи")
         link(rel="stylesheet", href="assets/css/fontfacerules.css")
         link(rel="stylesheet", href="assets/css/main.min.css")
         script(src="libs/js/jquery-3.7.0.min.js") 
-        //- script(src="libs/js/jquery.mobile-events.min.js") 
-        title Document
+        title Бизнес-тренинг
     body 
         header.header
             ._gradient-left.gradient
@@ -34,7 +34,7 @@ html(lang="en")
 
                             .header__installs-btns-wrapper
                                 a.btn-install(href="#") 
-                                    img.btn-install__icon(src="assets/img/icons/app-store.webp", alt="", width="25", height="25")
+                                    img.btn-install__icon(src="assets/img/icons/app-store.webp", srcset="assets/img/icons/app-store@2x.webp 2x", alt="", width="25", height="25")
                                     p.btn-install__label
                                         span.btn-install__label-install Установить #[br]
                                         span.btn-install__label-install_with Apple Store
@@ -48,7 +48,7 @@ html(lang="en")
                                 | Создано совместно с командой психологов #1
 
             .header__main-btn-wrapper
-                a.header__main-btn.btn-ticket(href="#")
+                a.header__main-btn.btn-ticket(href="https://t.me/+befqIH_ZlYo3NTVi")
                     +svgIcon('circled-text', 'btn-ticket__circled-text')
                     .btn-ticket__bg
                     span.header__main-btn-label.btn-ticket__label Запуск 
@@ -57,49 +57,59 @@ html(lang="en")
             .header__images-wrapper
                 .header__image-wrapper-left.header__image-wrapper
                     ._gradient.gradient
-                    img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
+                    picture
+                        source(media="(max-width: 473px)", srcset="assets/img/header-image-left@138w.webp")
+                        source(media="(max-width: 710px)", srcset="assets/img/header-image-left@200w.webp")
+                        source(media="(max-width: 1645px)", srcset="assets/img/header-image-left@320w.webp")
+                        source(media="(min-width: 1646px)", srcset="assets/img/header-image-left.webp")
+                        img.header__image-left.header__image(src="assets/img/header-image-left.webp", alt="", width="420", height="602")
                 .header__image-wrapper-right.header__image-wrapper
-                    img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
+                    picture
+                        source(media="(max-width: 473px)", srcset="assets/img/header-image-right@138w.webp")
+                        source(media="(max-width: 710px)", srcset="assets/img/header-image-right@200w.webp")
+                        source(media="(max-width: 1645px)", srcset="assets/img/header-image-right@328w.webp")
+                        source(media="(min-width: 1646px)", srcset="assets/img/header-image-right.webp")
+                        img.header__image-right.header__image(src="assets/img/header-image-right.webp", alt="", width="428", height="680")
 
         main.page
             section.page__youllget.youllget.page__section
                 .youllget__container.container
+                    h2.youllget__title.page__subtitle
+                        | Программа тренинга
                     ul.youllget__list.anim-section
+                        ._gradient.gradient
                         li.youllget__item
                             p.youllget__item-num 01/
                             p.youllget__item-text.text-show-anim
-                                | Увеличить свои продажи в несколько раз и стать 
-                                | настоящим гуру с прибылью от 150 000 ₽ в месяц.
+                                | Знакомство и ответы на вопросы
                         li.youllget__item
                             p.youllget__item-num 02/
                             p.youllget__item-text.text-show-anim
-                                | Привлечь новых клиентов и создать 
-                                | базу лояльных покупателей.
+                                | Тренды 2023 года
                         li.youllget__item
                             p.youllget__item-num 03/
                             p.youllget__item-text.text-show-anim
-                                | Овладеть мощными техниками переговоров 
-                                | и заключения сделок.
+                                | Инновационая техника продаж 
                         li.youllget__item
                             p.youllget__item-num 04/
                             p.youllget__item-text.text-show-anim
-                                | Создать неотразимые предложения, 
-                                | которые невозможно отклонить.
+                                | Практические упражнения 
                         li.youllget__item
                             p.youllget__item-num 05/
                             p.youllget__item-text.text-show-anim
-                                | Повысить конверсию и доходность 
-                                | каждой сделки.
+                                | Психология успеха в продажах
                         li.youllget__item
                             p.youllget__item-num 06/
                             p.youllget__item-text.text-show-anim
-                                | Максимизировать эффективность 
-                                | работы и сэкономить время.
-                    .youllget__img-wrapper
-                        ._gradient.gradient
-                        img.youllget__img(src="assets/img/youllget@517px.webp", alt="", width="516", height="344")
-                        a.youllget__img-play-btn(href="#") 
-                            +svgIcon('play')
+                                | Инновационая техника продаж 
+                        li.youllget__item
+                            p.youllget__item-num 07/
+                            p.youllget__item-text.text-show-anim
+                                | Как сделать каждого клиента постоянным 
+                        li.youllget__item
+                            p.youllget__item-num 08/
+                            p.youllget__item-text.text-show-anim
+                                | Подведение итогов и вопросы
 
             section.page__results.results.page__section
                 .results__container.container
@@ -119,48 +129,48 @@ html(lang="en")
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon1-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon1-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon1-large.svg", alt="", width="73", height="71")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon1-small.svg", alt="", width="58", height="58")
                                 p.results__item-label.text-show-anim._horizontal
                                     | Разработать стратегии продаж, которые гарантированно 
                                     | увеличат вашу прибыль.
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon2-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon2-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon2-large.svg", alt="", width="75", height="71")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon2-small.svg", alt="", width="47", height="67")
                                 p.results__item-label.text-show-anim._horizontal
                                     | Стать экспертом в убеждении и влиянии на ваших 
                                     | клиентов, создавая непреодолимые предложения. 
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon3-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon3-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon3-large.svg", alt="", width="80", height="79")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon3-small.svg", alt="", width="69", height="70")
                                 p.results__item-label.text-show-anim._horizontal
                                     | Повысить конверсию продаж и эффективность 
                                     | работы вашей команды. 
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon4-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon4-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon4-large.svg", alt="", width="73", height="73")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon4-small.svg", alt="", width="66", height="66")
                                 p.results__item-label.text-show-anim
                                     | Оптимизировать ваши продажи через автоматизацию 
                                     | и персонализацию, сэкономив время и ресурсы. 
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon5-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon5-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon5-large.svg", alt="", width="66", height="63")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon5-small.svg", alt="", width="63", height="61")
                                 p.results__item-label.text-show-anim
                                     | Захватить рынок и обойти конкурентов, став 
                                     | востребованным лидером в вашей отрасли.
                         .results__item-wrapper 
                             li.results__item
                                 .results__item-icon-wrapper
-                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon6-large.svg", alt="")
-                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon6-small.svg", alt="")
+                                    img.results__item-icon-large.results__item-icon(src="assets/img/icons/results/icon6-large.svg", alt="", width="71", height="71")
+                                    img.results__item-icon-small.results__item-icon(src="assets/img/icons/results/icon6-small.svg", alt="", width="70", height="69")
                                 p.results__item-label.text-show-anim
                                     | Получить непреодолимую уверенность и 
                                     | умение достигать поставленных целей.
@@ -190,7 +200,7 @@ html(lang="en")
                                     .products__item-image-border
                                     .products__item-image-border-cliped
                                 .products__item-image-background
-                                    img.products__item-image(src="assets/img/icons/sticker-wooman.webp", alt="", width="184", height="192")
+                                    img.products__item-image(src="assets/img/sticker-wooman.webp", srcset="assets/img/sticker-wooman@2x.webp 2x", alt="", width="184", height="192")
                         li.products__item-right.products__item
                             p.products__item-nick @maxwiwi
                             .products__item-image-wrapper
@@ -198,7 +208,7 @@ html(lang="en")
                                     .products__item-image-border
                                     .products__item-image-border-cliped
                                 .products__item-image-background
-                                    img.products__item-image(src="assets/img/icons/sticker-man.webp", alt="", width="184", height="192")
+                                    img.products__item-image(src="assets/img/sticker-man.webp", srcset="assets/img/sticker-man@2x.webp 2x", alt="", width="184", height="192")
                     p.products__descr-bottom.products__descr.page__subdescr.text-show-anim._horizontal-reverse
                         | Без разницы, какой продукт Вы продаете — от шоколадных конфет до роскошных 
                         | автомобилей и риелторских услуг — наше готовое предложение по продажам поможет 
@@ -236,7 +246,13 @@ html(lang="en")
                         | Время для новых рекордов в продажах!
                     .records-descr-wrapper
                         .records__images
-                            img(src="assets/img/records-elipse.webp", alt="", width="545", height="546")
+                            picture
+                                source(media="(max-width: 470px)", srcset="assets/img/records-elipse@170h.webp")
+                                source(media="(max-width: 625px)", srcset="assets/img/records-elipse@250h.webp")
+                                source(media="(max-width: 720px)", srcset="assets/img/records-elipse@300h.webp")
+                                source(media="(max-width: 1575px)", srcset="assets/img/records-elipse@400h.webp")
+                                source(media="(min-width: 1576px)", srcset="assets/img/records-elipse.webp")
+                                img(src="assets/img/records-elipse.webp", alt="", width="545", height="546")
                             img(src="assets/img/records-semielipse.svg", alt="", width="273", height="546")
                         .records__descrs
                             p.records__descr.page__subdescr.text-show-anim._horizontal-reverse
@@ -280,21 +296,17 @@ html(lang="en")
                             | Если что-то хотите уточнить, звоните прямо сейчас 
                             | и станьте королем продаж завтра! 
 
-                        ul.footer__form-list.slider
-                            li.footer__form-item.slider__item(data-slide-to="0", data-slider-main)
+                        ul.footer__form-list
+                            li.footer__form-item
                                 p.footer__form-descr
                                     | Напиши нам 
-                                    span.footer__form-descr-bold “Я в деле” И мы поможем стать номер 1  
-                            li.footer__form-item.slider__item(data-slide-to="1")
-                                form.footer__form(action="#") 
-                                    input.footer__forn-input(type="text", placeholder="Ваше имя")
-                                    input.footer__forn-input(type="phone", placeholder="Телефон")
+                                    span.footer__form-descr-bold “Я в деле” И мы поможем стать номер 1
                     .footer__btn-ticket-wrapper
-                        a.footer__btn-ticket.btn-ticket(href="#") 
+                        a.footer__btn-ticket.btn-ticket(href="https://t.me/+befqIH_ZlYo3NTVi") 
                             +svgIcon('circled-text', 'btn-ticket__circled-text')
                             .btn-ticket__bg
                             span.btn-ticket__label Запуск 
                                 span Бесплатно!
                         +svgIcon('arrow', 'footer__btn-ticket-arrow footer__arrow-anim')
 
-        script(src="assets/js/main.min.js") 
+        script(src="assets/js/main.min.js" async) 

@@ -6,15 +6,30 @@
 
 .youllget__container {
     display: flex;
+    flex-direction: column;
     position: relative;
 }
 
+.youllget__title {
+    margin-bottom: 35px;
+}
+
 .youllget__list {
+    position: relative;
     margin-left: 133px;
     display: flex;
     flex-direction: column;
     gap: 70px;
-    z-index: 2;
+
+    ._gradient {
+        position: absolute;
+        background-image: url('../img/bg-gradients/youllget-image.svg');
+        width: 770px;
+        height: 700px;
+        bottom: -31px;
+        left: 516px;
+        animation: youllgetImageGradient 7s ease-in-out infinite;
+    }
 }
 
 .youllget__item {
@@ -53,7 +68,8 @@
     }
 }
 
-.youllget__item:nth-of-type(6) {
+.youllget__item:nth-of-type(6),
+.youllget__item:nth-of-type(8) {
 
     &:hover .youllget__item-num {
         -webkit-text-stroke-width: 10px;
@@ -71,29 +87,6 @@
     max-width: 674px;
 }
 
-.youllget__img-wrapper {
-    position: relative;
-    margin-left: -67.6px;
-    margin-top: 563.21px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    height: max-content;
-
-    ._gradient {
-        background-image: url('../img/bg-gradients/youllget-image.svg');
-        width: 770px;
-        height: 700px;
-        bottom: -373.71px;
-        left: -309.4px;
-        animation: youllgetImageGradient 7s ease-in-out infinite;
-    }
-
-    &:hover  .youllget__img-play-btn {
-        opacity: 100;
-    }
-}
 @keyframes youllgetImageGradient {
     from {
         transform: translateX(0) scale(1);
@@ -108,54 +101,13 @@
     }
 }
 
-.youllget__img {
-    display: flex;
-    transform: rotate(-9.748deg);
-    transform-origin: center;
-    border-radius: 20px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.youllget__img-play-btn {
-    display: flex;
-    opacity: 0.3;
-    transition: 500ms ease-in-out opacity;
-    position: absolute;
-    fill: #D9D9D9;
-
-    .svg-icon {
-        width: 84px;
-        height: 84px;
-    }
-}
-
 @media screen and (max-width: 1535px) {
-    .youllget__img-wrapper {
-        // display: none;
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: 70px;
-        align-self: center;
-    }
-
-    .youllget__container {
-        flex-direction: column-reverse;
-    }
-
     .youllget__list {
         margin-left: 0;
     }
 }
 
 @media screen and (max-width: 665px) {
-    .youllget__img-wrapper {
-        img {
-            width: 316px;
-            height: calc(316px * 344px / 516px);
-        }
-    }
-
     .youllget__item {
         flex-direction: column;
     }

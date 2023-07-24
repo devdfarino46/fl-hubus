@@ -79,14 +79,15 @@
     position: relative;
 }
 
-.results__item-icon {
-
+.results__item-icon-large {
+    backdrop-filter: blur(3.205764055252075px);
 }
 
 .results__item-icon-small {
     position: absolute;
     top: 46px;
     left: 47px;
+    filter: drop-shadow(0.588520884513855px 1.17704176902771px 3.531125068664551px 0px rgba(28, 95, 55, 0.60));
 }
 
 .results__item {

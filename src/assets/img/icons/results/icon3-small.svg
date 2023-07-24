@@ -1,18 +1,8 @@
 <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_765_70)">
-<circle cx="33.8438" cy="33.7539" r="30" fill="url(#paint0_linear_765_70)" shape-rendering="crispEdges"/>
+<g>
+<circle cx="33.8438" cy="33.7539" r="30" fill="url(#paint0_linear_765_70)" />
 </g>
 <defs>
-<filter id="filter0_d_765_70" x="0.246448" y="0.876065" width="68.6335" height="68.6335" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="0.71946" dy="1.43892"/>
-<feGaussianBlur stdDeviation="2.15838"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.109804 0 0 0 0 0.372549 0 0 0 0 0.215686 0 0 0 0.6 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_765_70"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_765_70" result="shape"/>
-</filter>
 <linearGradient id="paint0_linear_765_70" x1="33.8438" y1="40.9876" x2="18.1588" y2="-13.1735" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="1" stop-color="#EBEBEB" stop-opacity="0"/>

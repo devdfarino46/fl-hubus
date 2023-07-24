@@ -9,8 +9,6 @@ function inSection(section = $('.page__section, .header, .footer')) {
     }
 }
 
-
-
 function Slider(section = $('.page__section')) {
     this.state = false;
     this.slider = section.find('.slider');
@@ -35,10 +33,6 @@ function Slider(section = $('.page__section')) {
             }
         }
     }, 2800);
-
-    this.slider.find('.footer__forn-input').on('focus', ev => {
-        this.state = false;
-    })
 }
 Slider.prototype.getItem = function(index) {
     let item = this.slider.find('.slider__item[data-slide-to=\''+index+'\'');
@@ -68,11 +62,9 @@ $(window).on('load scroll', ev => {
     }
     
     if ( inSection(footer) ) {
-        footerSlider.state = true;
         footer.find(textShowAnim).addClass('--show');
         footerArrowAnim.addClass('--show');
     } else {
-        footerSlider.state = false;
         footer.find(textShowAnim).removeClass('--show');
         footerArrowAnim.removeClass('--show');
     }
